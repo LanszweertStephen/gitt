@@ -1,5 +1,28 @@
 function init() {
   moveAmbulance();
+  document.getElementById('btnShowTime').addEventListener('click',setClickHandlerTime);
+}
+
+
+let timeBool = false;
+
+function setClickHandlerTime(){
+  timeBool = !timeBool;
+  toggleTime();
+}
+
+function toggleTime(){
+  let timeDiv = document.getElementById('currentTime');
+  if(timeBool){
+    timeDiv.style.display = 'block';
+    setInterval(function(){
+      let time = new Date();
+      let timeToSet = time.getHours() + 'u' + time.getMinutes() + 'min' + time.getSeconds() + 'sec';
+      timeDiv.innerHTML = timeToSet;
+    },1000);
+  } else {
+    timeDiv.style.display = 'none';
+  }
 }
 
 function moveAmbulance() {

@@ -14,3 +14,11 @@ i {
   left: 0px;
   color: yellow;
 }
+
+
+#currentTime{
+  font-size: 40px;
+  color: green;
+  margin-top: 15px;
+  display: none;
+}
