@@ -1,10 +1,26 @@
 function init() {
   moveAmbulance();
   document.getElementById('btnShowTime').addEventListener('click',setClickHandlerTime);
+  testClasses();
+}
+
+
+class Icon{
+  constructor(name){
+    this.name = name;
+  }
+  sayName(){
+    return this.name;
+  }
 }
 
 
 let timeBool = false;
+
+function testClasses(){
+  let i = new Icon("Stephen");
+  console.log(i.sayName() + ' is the name of the classObject');
+}
 
 function setClickHandlerTime(){
   timeBool = !timeBool;
